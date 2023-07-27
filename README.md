@@ -19,6 +19,7 @@ You will need NodeJS in order to run this project. Execute the following command
 The following points will need to be addressed before you can take your 3D website into production:
 
 - Responsive design is missing, no mobile menu included.
+- ARIA attributes and accessibility testing.
 - The model needs to be optimized so the final GLB file is ~10-15 MB maximum for speedy loading.
 - Window resizing doesn't resize the viewport.
 - No 404 error handling.
