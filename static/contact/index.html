@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>Something Pink Demo Room</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="/style.css" />
+        <script>
+            function load() {
+                // Bots shouldn't run 3D code, it will likely confuse them.
+                if (navigator.userAgent.includes("bot")) {
+                    return
+                }
+                // Create an empty canvas to test for WebGL support.
+                const canvas = document.createElement('canvas');
+                if (!!window.WebGLRenderingContext &&
+                    (canvas.getContext('webgl') || canvas.getContext('experimental-webgl'))) {
+                    // Create a class for JS to use if WebGL is enabled.
+                    document.body.classList.add("webgl-supported")
+                    // Load the full script
+                    const script = document.createElement("script")
+                    script.src="/website.js"
+                    document.body.appendChild(script)
+                } else {
+                    // Otherwise, move the noscript text out, so it can be displayed.
+                    document.getElementById("nowebgl").innerHTML = document.getElementById("nowebgl").getElementsByTagName("noscript")[0].innerHTML
+                }
+            }
+
+            // Only run this code when the page has fully loaded.
+            window.addEventListener("load", load)
+        </script>
+    </head>
+    <body>
+        <div id="container">
+            <header id="header">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="/contact/">Contact</a></li>
+                </ul>
+            </header>
+            <div id="nowebgl">
+                <noscript>
+                    Your browser does not support JavaScript and/or WebGL, so we are showing you the simplified version
+                    of the site. You can still read all the content, but if you prefer the full 3D experience, please
+                    enable JavaScript and WebGL.
+                </noscript>
+            </div>
+            <div id="contentcontainer">
+                <canvas id="renderCanvas"></canvas>
+                <main id="content">
+                    <h1>Contact us</h1>
+                </main>
+            </div>
+            <footer id="footer">
+                Copyright &copy; Something Pink
+            </footer>
+        </div>
+    </body>
+</html>

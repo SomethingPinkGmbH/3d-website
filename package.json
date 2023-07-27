@@ -1,0 +1,27 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack -w",
+    "serve": "webpack serve"
+  },
+  "author": "Something Pink",
+  "license": "MIT",
+  "devDependencies": {
+    "@babylonjs/core": "^5.53.0",
+    "@babylonjs/inspector": "^5.53.0",
+    "@babylonjs/loaders": "^5.53.0",
+    "compression-webpack-plugin": "^10.0.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "ejs": "^3.1.9",
+    "jsdom": "^21.1.1",
+    "sharp": "^0.32.0",
+    "ts-loader": "^9.4.2",
+    "webpack": "latest",
+    "webpack-cli": "latest",
+    "webpack-dev-server": "latest"
+  }
+}
